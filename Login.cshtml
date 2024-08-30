@@ -1,0 +1,47 @@
+﻿@model EmployeeTask.Models.tblemployee
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Login</title>
+</head>
+<body>
+    <div> 
+        <h2>Login Here</h2>
+
+        @using (Html.BeginForm())
+            {
+                <table>
+                    <tr>
+                        <th>Employee Code</th>
+                        <td>@Html.TextBox("employee_code")</td>
+                    </tr>
+
+                    <tr>
+                        <th>Password</th>
+                        <td>@Html.Password("password")</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="submit"value="LogIn"/>
+                        </td>
+                    </tr>
+                </table>
+            }
+
+        <h2>@ViewBag.msg</h2>
+        <p>
+            Forgot Password? <a href="~/Employee/ForgotPassword">Click Here</a>
+        </p>
+      <p>
+          Not Yet Registered? <a href="~/Employee/Create">Click Here</a>to register
+
+      </p>
+    </div>
+</body>
+</html>
